@@ -1,0 +1,154 @@
+.profile-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 720px;
+}
+
+.profile-identity {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #888;
+}
+
+.profile-identity h2 {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.profile-position {
+  margin: 0 0 0.2rem 0;
+  color: #646cff;
+  font-weight: 500;
+}
+
+.profile-department {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.profile-section {
+  margin-top: 1.5rem;
+}
+
+.profile-section h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.profile-section p {
+  margin: 0;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.profile-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.profile-details li {
+  display: flex;
+  gap: 1rem;
+  color: #ccc;
+}
+
+.profile-label {
+  min-width: 120px;
+  color: #888;
+  font-weight: 500;
+}
+
+.profile-skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-skill {
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(100, 108, 255, 0.15);
+  color: #646cff;
+}
+
+@media (prefers-color-scheme: light) {
+  .profile-card {
+    background: #f5f5f5;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-identity {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-avatar {
+    border-color: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.02);
+    color: #666;
+  }
+
+  .profile-identity h2,
+  .profile-section h3 {
+    color: #213547;
+  }
+
+  .profile-position {
+    color: #5566ff;
+  }
+
+  .profile-section p,
+  .profile-details li {
+    color: #444;
+  }
+
+  .profile-skill {
+    background: rgba(85, 102, 255, 0.12);
+    color: #5566ff;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-identity {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-details li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+}
