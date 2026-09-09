@@ -1,0 +1,65 @@
+/* Écran scindé : formulaire à gauche, visuel plein cadre à droite. */
+/* La colonne de gauche ne descend jamais sous la largeur de la carte,
+   sinon le titre se casse en trois lignes sur un écran 1024px. */
+.connexion {
+  display: grid;
+  grid-template-columns: minmax(480px, 44%) 1fr;
+  min-height: 100vh;
+}
+
+.connexion__panel {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2.5rem;
+  background-color: var(--color-bg);
+}
+
+.connexion__brand {
+  flex-shrink: 0;
+}
+
+.connexion__form-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.connexion__visual {
+  position: relative;
+  overflow: hidden;
+}
+
+/* PLACEHOLDER — à remplacer par <img className="connexion__image" /> */
+.connexion__image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background-color: var(--color-placeholder);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.45) 0 12px,
+    transparent 12px 24px
+  );
+}
+
+.connexion__caption {
+  position: absolute;
+  right: 2rem;
+  bottom: 2.5rem;
+  max-width: 300px;
+  padding: 0.9rem 1.25rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: right;
+  color: var(--color-primary);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}

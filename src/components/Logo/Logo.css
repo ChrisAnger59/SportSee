@@ -1,0 +1,46 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Symbole provisoire : quatre barres rouges de hauteurs alternées. */
+.logo__mark {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 22px;
+}
+
+.logo__bar {
+  width: 4px;
+  border-radius: 2px;
+  background-color: var(--color-accent);
+}
+
+.logo__bar:nth-child(1) {
+  height: 60%;
+}
+
+.logo__bar:nth-child(2) {
+  height: 100%;
+}
+
+.logo__bar:nth-child(3) {
+  height: 45%;
+}
+
+.logo__bar:nth-child(4) {
+  height: 80%;
+}
+
+.logo__wordmark {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+
+.logo--mark .logo__mark {
+  height: 18px;
+}

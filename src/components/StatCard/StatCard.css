@@ -1,0 +1,63 @@
+.stat-card {
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-md);
+}
+
+.stat-card__label {
+  font-size: 0.9rem;
+}
+
+.stat-card__value {
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-card__unit {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* --- Variante claire (bloc « Cette semaine » du dashboard) ----------- */
+
+.stat-card--light {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.stat-card--light .stat-card__label {
+  color: var(--color-text-muted);
+}
+
+.stat-card--light .stat-card__value--primary {
+  color: var(--color-primary);
+}
+
+.stat-card--light .stat-card__value--primary .stat-card__unit {
+  color: var(--color-primary-soft);
+}
+
+.stat-card--light .stat-card__value--accent {
+  color: var(--color-accent);
+}
+
+.stat-card--light .stat-card__value--accent .stat-card__unit {
+  color: var(--color-accent-soft);
+}
+
+/* --- Variante pleine (grille de statistiques du profil) -------------- */
+
+.stat-card--primary {
+  min-height: 145px;
+  color: var(--color-surface);
+  background-color: var(--color-primary);
+}
+
+.stat-card--primary .stat-card__value {
+  margin-top: 1rem;
+  color: var(--color-surface);
+}
+
+.stat-card--primary .stat-card__unit {
+  color: rgba(255, 255, 255, 0.75);
+}
