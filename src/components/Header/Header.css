@@ -1,107 +1,53 @@
 .header {
-  background: #1a1a1a;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.75rem 0;
 }
 
-.header-content {
-  max-width: 1400px;
-  margin: 0 auto;
+.header__inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
   gap: 2rem;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter);
 }
 
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.header-logo-placeholder {
+.header__logo {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #888;
 }
 
-.header-logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.nav {
+/* La nav est une pilule blanche posée sur le fond lavande. */
+.header__nav {
   display: flex;
-  gap: 1.5rem;
   align-items: center;
+  gap: 1.75rem;
+  padding: 0.9rem 2rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card);
 }
 
-.nav-link {
-  color: #ccc;
-  text-decoration: none;
+.header__link {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: color 0.15s ease;
+}
+
+.header__link:hover {
+  color: var(--color-primary);
+}
+
+.header__link.active {
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
+  color: var(--color-primary);
 }
 
-.nav-link:hover {
-  color: #fff;
-  background: rgba(100, 108, 255, 0.1);
+.header__link--logout {
+  color: var(--color-primary);
 }
 
-.nav-link.active {
-  color: #646cff;
-  font-weight: 700;
-  border-bottom: 3px solid #646cff;
-}
-
-@media (prefers-color-scheme: light) {
-  .header {
-    background: #fff;
-    border-bottom-color: rgba(0, 0, 0, 0.1);
-  }
-
-  .header-logo-placeholder {
-    border-color: rgba(0, 0, 0, 0.25);
-    color: #999;
-  }
-
-  .header-logo-text {
-    color: #213547;
-  }
-
-  .nav-link {
-    color: #444;
-  }
-
-  .nav-link:hover {
-    color: #213547;
-    background: rgba(85, 102, 255, 0.1);
-  }
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .nav {
-    width: 100%;
-    justify-content: center;
-  }
+.header__separator {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-border);
 }

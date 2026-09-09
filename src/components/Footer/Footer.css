@@ -1,0 +1,29 @@
+.footer {
+  padding: 2.5rem 0 2rem;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__links a {
+  transition: color 0.15s ease;
+}
+
+.footer__links a:hover {
+  color: var(--color-primary);
+}
