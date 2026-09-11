@@ -1,23 +1,19 @@
 import UserBanner from '../../components/UserBanner'
 import GraphCard from '../../components/GraphCard'
 import StatCard from '../../components/StatCard'
+import { MOCK_USER_INFO } from '../../mocks/data'
 import './Dashboard.css'
 
-// Contenu figé repris des maquettes : il sera remplacé par le service
-// de données à l'étape suivante du projet.
-const user = {
-  name: 'Clara Dupont',
-  memberSince: '14 juin 2023',
-  totalDistance: '312 km',
-}
+const user = MOCK_USER_INFO['user123']
+
 
 function Dashboard() {
   return (
     <div className="dashboard">
       <UserBanner
-        name={user.name}
-        memberSince={user.memberSince}
-        totalDistance={user.totalDistance}
+        name={user.profile.firstName}
+        memberSince={user.profile.createdAt}
+        totalDistance={user.statistics.totalDistance}
       />
 
       <section className="dashboard__section">
