@@ -1,13 +1,42 @@
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { login } from '../../services/dataService'
 import './ConnectForm.css'
+
+function getErrorMessage(error) {
+  switch (error.status) {
+    case 400:
+      return 'Veuillez remplir les deux champs'
+    case 401: 
+      return 'Identifiant ou mot de passe incorrect'
+    case undefined:
+      return 'Serveur injoignable, réessayez plus tard'
+    default:
+      return 'Une erreur est survenue'
+  }
+}
 
 function ConnectForm() {
   const navigate = useNavigate()
+  const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
 
-  // L'authentification réelle sera branchée sur le service de données.
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    navigate('/dashboard')
+    setError(null)
+    setIsLoading(true)
+
+    const formData = new FormData(event.currentTarget)
+    const username = formData.get('username')
+    const password = formData.get('password')
+
+    try {
+      await login(username, password)
+      navigate('/dashboard')
+    } catch (err) {
+      setError(getErrorMessage(err))
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -22,15 +51,15 @@ function ConnectForm() {
 
       <form className="connect-form__form" onSubmit={handleSubmit}>
         <div className="connect-form__field">
-          <label className="connect-form__label" htmlFor="email">
-            Adresse email
+          <label className="connect-form__label" htmlFor="username">
+            Identifiant
           </label>
           <input
             className="connect-form__input"
-            type="email"
-            id="email"
-            name="email"
-            autoComplete="email"
+            type="text"
+            id="username"
+            name="username"
+            autoComplete="username"
           />
         </div>
 
@@ -47,8 +76,14 @@ function ConnectForm() {
           />
         </div>
 
-        <button className="connect-form__submit" type="submit">
-          Se connecter
+        {error && (
+          <p className="connect-form__error" role="alert">
+            {error}
+          </p>
+        )}
+
+        <button className="connect-form__submit" type="submit" disabled={isLoading}>
+          {isLoading ? 'Connexion...' : 'Se connecter'}
         </button>
       </form>
 

@@ -1,15 +1,5 @@
 import './GraphCard.css'
 
-/**
- * Carte accueillant un graphique.
- *
- * @param {string}  title       - Chiffre clé mis en avant ("18km en moyenne").
- * @param {'primary'|'accent'} tone - Couleur du titre.
- * @param {string}  subtitle    - Légende sous le titre.
- * @param {string}  [dateRange] - Période affichée, avec ses flèches.
- * @param {Array}   [legend]    - [{ label, color }] affichés sous le graphique.
- * @param {node}    [children]  - Le graphique. Un placeholder sinon.
- */
 function GraphCard({ title, tone = 'primary', subtitle, dateRange, legend, children }) {
   return (
     <article className="graph-card">
