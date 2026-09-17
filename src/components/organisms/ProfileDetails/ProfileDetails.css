@@ -1,0 +1,27 @@
+.profile-details {
+  padding: 1.75rem;
+}
+
+.profile-details__title {
+  padding-bottom: 1.5rem;
+  font-size: 1.35rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-details__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  margin: 1.5rem 0 0;
+}
+
+.profile-details__item {
+  display: flex;
+  gap: 0.3rem;
+  color: var(--color-text-muted);
+}
+
+.profile-details__value {
+  margin: 0;
+}
