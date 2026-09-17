@@ -1,6 +1,6 @@
 .profile {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
+  grid-template-columns: 1fr 1.15fr;
   gap: 3.5rem;
   align-items: start;
   margin-top: 1.5rem;
@@ -10,70 +10,6 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-
-.profile__card {
-  padding: 1.75rem;
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-}
-
-.profile__card--user {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-/* PLACEHOLDER — à remplacer par <img> une fois la photo disponible. */
-.profile__avatar {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 96px;
-  height: 96px;
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  background-color: var(--color-placeholder);
-  border-radius: var(--radius-sm);
-}
-
-.profile__name {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.profile__since {
-  margin-top: 0.15rem;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-}
-
-.profile__card-title {
-  padding-bottom: 1.5rem;
-  font-size: 1.35rem;
-  font-weight: 500;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.profile__details {
-  margin-top: 1.5rem;
-}
-
-.profile__detail + .profile__detail {
-  margin-top: 1.35rem;
-}
-
-.profile__stats-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.profile__stats-since {
-  margin-top: 0.15rem;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
 }
 
 .profile__stats-grid {

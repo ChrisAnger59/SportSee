@@ -1,37 +1,4 @@
-/* Écran scindé : formulaire à gauche, visuel plein cadre à droite. */
-/* La colonne de gauche ne descend jamais sous la largeur de la carte,
-   sinon le titre se casse en trois lignes sur un écran 1024px. */
-.connexion {
-  display: grid;
-  grid-template-columns: minmax(480px, 44%) 1fr;
-  min-height: 100vh;
-}
-
-.connexion__panel {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2.5rem;
-  background-color: var(--color-bg);
-}
-
-.connexion__brand {
-  flex-shrink: 0;
-}
-
-.connexion__form-wrapper {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 3rem;
-}
-
-.connexion__visual {
-  position: relative;
-  overflow: hidden;
-}
-
-/* PLACEHOLDER — à remplacer par <img className="connexion__image" /> */
+/* PLACEHOLDER — à remplacer par une image */
 .connexion__image-placeholder {
   display: flex;
   align-items: center;

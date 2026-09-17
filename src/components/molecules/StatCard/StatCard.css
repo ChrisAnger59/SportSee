@@ -1,0 +1,55 @@
+.stat-card {
+  padding: 1.5rem 1.75rem;
+}
+
+.stat-card__label {
+  font-size: 0.9rem;
+}
+
+.stat-card__value {
+  margin-top: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-card__unit {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* --- Carte blanche : libellé gris, valeur colorée --- */
+
+.stat-card--surface .stat-card__label {
+  color: var(--color-text-muted);
+}
+
+.stat-card--tone-primary .stat-card__value {
+  color: var(--color-primary);
+}
+
+.stat-card--tone-primary .stat-card__unit {
+  color: var(--color-primary-soft);
+}
+
+.stat-card--tone-accent .stat-card__value {
+  color: var(--color-accent);
+}
+
+.stat-card--tone-accent .stat-card__unit {
+  color: var(--color-accent-soft);
+}
+
+/* --- Carte bleue : tout en blanc --- */
+
+.stat-card--primary {
+  min-height: 145px;
+}
+
+.stat-card--primary .stat-card__value {
+  margin-top: 1rem;
+  color: var(--color-surface);
+}
+
+.stat-card--primary .stat-card__unit {
+  color: rgba(255, 255, 255, 0.75);
+}

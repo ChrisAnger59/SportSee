@@ -1,0 +1,31 @@
+/* Écran scindé. La colonne de gauche ne descend jamais sous la largeur
+   de la carte, sinon le titre se casse en trois lignes à 1024px. */
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(480px, 44%) 1fr;
+  min-height: 100vh;
+}
+
+.auth-layout__panel {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2.5rem;
+  background-color: var(--color-bg);
+}
+
+.auth-layout__brand {
+  flex-shrink: 0;
+}
+
+.auth-layout__content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.auth-layout__visual {
+  position: relative;
+  overflow: hidden;
+}

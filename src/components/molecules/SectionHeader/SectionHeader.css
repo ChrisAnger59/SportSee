@@ -1,0 +1,10 @@
+.section-header__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.section-header__subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}

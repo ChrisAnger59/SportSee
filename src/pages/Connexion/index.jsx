@@ -1,32 +1,31 @@
-import ConnectForm from '../../components/ConnectForm'
-import Logo from '../../components/Logo'
+import AuthLayout from '../../components/templates/AuthLayout'
+import ConnectForm from '../../components/organisms/ConnectForm'
 import './Connexion.css'
 
 function Connexion() {
   return (
-    <div className="connexion">
-      <section className="connexion__panel">
-        <div className="connexion__brand">
-          <Logo />
-        </div>
-        <div className="connexion__form-wrapper">
-          <ConnectForm />
-        </div>
-      </section>
-
-      <section className="connexion__visual">
-        {/* PLACEHOLDER : visuel de la maquette (coureurs) non fourni. */}
-        <div className="connexion__image-placeholder">
+    <AuthLayout 
+    visual={
+      <>
+        <div className='connexion__image-placeholder'>
           <span>Visuel d'accueil</span>
         </div>
 
-        <p className="connexion__caption">
-          Analysez vos performances en un clin d'œil,
+        <p className='connexion__caption'>
+          Analyser vos performances en un clin d'oeil,
           <br />
-          suivez vos progrès et atteignez vos objectifs.
+          Suivez vos progrès et atteignez vos objectifs.
         </p>
-      </section>
-    </div>
+      </>
+    }>
+
+      <ConnectForm />
+
+    </AuthLayout>
+
+
+    
+
   )
 }
 
