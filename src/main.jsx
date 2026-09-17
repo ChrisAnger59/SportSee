@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout'
+import MainLayout from './components/templates/MainLayout'
 import Connexion from './pages/Connexion'
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
     <Router>
       <Routes>
         <Route path="/" element={<Connexion />} />
-        <Route element={<Layout />}>
+        <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Error />} />

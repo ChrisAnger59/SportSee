@@ -2,17 +2,6 @@
   margin-top: 3.5rem;
 }
 
-.dashboard__section-title {
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.dashboard__section-subtitle {
-  margin-top: 0.25rem;
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-}
-
 .dashboard__charts {
   display: grid;
   grid-template-columns: 1fr 1.35fr;
@@ -28,28 +17,17 @@
   margin-top: 1.5rem;
 }
 
-/* Suffixe atténué du titre « x4 sur objectif de 6 ». */
-.dashboard__goal-target {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-primary-soft);
-}
-
-/* PLACEHOLDER — futur graphique en anneau. */
-.dashboard__donut {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 200px;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  border: 24px solid var(--color-placeholder);
-  border-radius: 50%;
-}
-
 .dashboard__week-stats {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+/* Emplacements réservés : hauteurs des cartes sur la maquette */
+.dashboard__chart {
+  min-height: 480px;
+}
+
+.dashboard__chart--goal {
+  min-height: 340px;
 }

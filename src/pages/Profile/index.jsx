@@ -1,4 +1,4 @@
-import StatCard from '../../components/StatCard'
+import StatCard from '../../components/molecules/StatCard'
 import './Profile.css'
 
 // Contenu figé repris des maquettes : il sera remplacé par le service

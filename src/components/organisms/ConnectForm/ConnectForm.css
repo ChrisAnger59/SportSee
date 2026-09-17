@@ -1,0 +1,48 @@
+.connect-form {
+  width: 100%;
+  max-width: 398px;
+  padding: 2.5rem;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.connect-form__headline {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-primary);
+}
+
+.connect-form__title {
+  margin-top: 1.75rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.connect-form__form {
+  margin-top: 1.5rem;
+}
+
+/* --- Placement des atomes et molécules --- */
+
+.connect-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.connect-form__error {
+  margin-top: 1.25rem;
+}
+
+.connect-form__submit {
+  width: 100%;
+  margin-top: 1.75rem;
+}
+
+.connect-form__forgot {
+  display: inline-block;
+  margin-top: 1.5rem;
+}

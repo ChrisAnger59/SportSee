@@ -1,0 +1,10 @@
+.user-identity__name {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.user-identity__since {
+  margin-top: 0.15rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,14 @@
+.nav-item {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: color 0.15s ease;
+}
+
+.nav-item:hover {
+  color: var(--color-primary);
+}
+
+.nav-item.active {
+  font-weight: 500;
+  color: var(--color-primary);
+}
