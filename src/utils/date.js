@@ -10,3 +10,7 @@ export function formatDate(value) {
         year: 'numeric'
     })
 }
+
+export function countDays(startISO, endISO) {
+    return Math.round((parseISODate(endISO) - parseISODate(startISO)) / 86400000) + 1
+}
