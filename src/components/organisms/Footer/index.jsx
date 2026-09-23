@@ -12,7 +12,7 @@ function Footer() {
                         Conditions générales
                     </a>
 
-                    <a className='footer__link' gref="#contact">
+                    <a className='footer__link' href="#contact">
                         Contact
                     </a>
 
