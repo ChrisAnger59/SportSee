@@ -3,7 +3,7 @@ import * as apiService from './apiService'
 import { saveSession, clearSession } from './session'
 
 export { isAuthenticated } from './session'
-export const USE_MOCK = import.meta.env.USE_MOCK === 'true'
+export const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
 
 const service = USE_MOCK ? mockService : apiService
 
