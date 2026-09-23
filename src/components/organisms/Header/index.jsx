@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../../services/dataService'
 import Button from '../../atoms/Button'
-import Logo from '../../atoms/NavItem'
+import Logo from '../../atoms/Logo'
 import './Header.css'
 import NavItem from '../../atoms/NavItem'
 
