@@ -8,7 +8,7 @@ import { formatDistance } from '../../utils/distance'
 import { MOCK_USER_ACTIVITY, MOCK_USER_INFO } from '../../mocks/data'
 import './Profile.css'
 
-// TEMPORAIRE : lecture directe du mock, en attendant getUserInfo().
+
 const user = MOCK_USER_INFO['user123']
 const sessions = MOCK_USER_ACTIVITY['user123']
 const MOCK_ACTIVITY_START_DATE = '2026-07-09'
