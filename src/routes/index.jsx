@@ -5,6 +5,7 @@ import Dashboard from '../pages/Dashboard'
 import Profile from '../pages/Profile'
 import Error from '../pages/Error'
 import ProtectedRoute from './ProtectedRoute'
+import UserProvider from '../contexts/UserContext/UserProvider'
 
 function AppRoutes() {
     return (
@@ -12,7 +13,7 @@ function AppRoutes() {
             <Route path="/" element={<Connexion />} />
 
             <Route element={<ProtectedRoute />}>
-                <Route element={<MainLayout />}>
+                <Route element={<UserProvider><MainLayout /></UserProvider>}>
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="*" element={<Error />} />

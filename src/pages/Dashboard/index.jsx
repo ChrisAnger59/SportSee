@@ -4,14 +4,12 @@ import StatCard from '../../components/molecules/StatCard'
 import UserBanner from '../../components/organisms/UserBanner'
 import { formatDate } from '../../utils/date'
 import { formatDistance } from '../../utils/distance'
-import { MOCK_USER_INFO } from '../../mocks/data'
+import { useUser } from '../../contexts/UserContext/useUser'
 import './Dashboard.css'
 
-// TEMPORAIRE : lecture directe du mock, en attendant getUserInfo().
-const user = MOCK_USER_INFO['user123']
 
 function Dashboard() {
-  const { profile, statistics } = user
+  const { profile, statistics } = useUser()
 
   const memberSince = formatDate(profile.createdAt)
 

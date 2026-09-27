@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import SectionHeader from '../../components/molecules/SectionHeader'
 import StatCard from '../../components/molecules/StatCard'
 import ProfileCard from '../../components/organisms/ProfileCard'
@@ -5,24 +6,51 @@ import ProfileDetails from '../../components/organisms/ProfileDetails'
 import { formatDate, countDays } from '../../utils/date'
 import { formatDuration } from '../../utils/duration'
 import { formatDistance } from '../../utils/distance'
-import { MOCK_USER_ACTIVITY, MOCK_USER_INFO } from '../../mocks/data'
+import { useUser } from '../../contexts/UserContext/useUser'
+import { getUserActivity } from '../../services/dataService'
 import './Profile.css'
-
-
-const user = MOCK_USER_INFO['user123']
-const sessions = MOCK_USER_ACTIVITY['user123']
-const MOCK_ACTIVITY_START_DATE = '2026-07-09'
-const MOCK_ACTIVITY_END_DATE = '2026-09-09'
+import ErrorMessage from '../../components/atoms/ErrorMessage'
 
 function Profile() {
-  const { profile, statistics } = user
+  const { profile, statistics } = useUser()
+  const [sessions, setSessions] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  const startDate = profile.createdAt
+  const endDate = "2026-09-09"
+
+  useEffect(() => {
+    async function loadActivity() {
+      try {
+        const data = await getUserActivity(startDate, endDate)
+        setSessions(data)
+      } catch(err) {
+        setError(err)
+      }finally{
+        setIsLoading(false)
+      }
+    }
+
+    loadActivity()
+  }, [startDate, endDate])
+
+  if (isLoading) {
+    return (<p>Chargement de votre activité</p>)
+  }
+
+  if (error) {
+    return (<ErrorMessage>Impossible de charger votre activité</ErrorMessage>)
+  }
+
+  console.log(error)
 
   const totalCalories = sessions.reduce((sum, session) => sum + session.caloriesBurned, 0)
 
   const allDates = sessions.map((session) => session.date)
   const uniqueDates = new Set(allDates)
   const activeDays = uniqueDates.size
-  const restDays = countDays(MOCK_ACTIVITY_START_DATE, MOCK_ACTIVITY_END_DATE) - activeDays
+  const restDays = countDays(startDate, endDate) - activeDays
 
   const details = [
     { label: 'Âge', value: profile.age },

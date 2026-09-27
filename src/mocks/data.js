@@ -46,7 +46,7 @@ export const MOCK_USER_INFO = {
         "profile": {
             "firstName": "Marc",
             "lastName": "Dubois",
-            "createdAt": "2025-01-01",
+            "createdAt": "2025-01-02",
             "age": 45,
             "weight": 85,
            "height": 180,
@@ -63,7 +63,7 @@ export const MOCK_USER_INFO = {
         "profile": {
             "firstName": "Emma",
             "lastName": "Leroy",
-            "createdAt": "2025-01-01",
+            "createdAt": "2025-01-03",
             "age": 28,
             "weight": 62,
             "height": 170,
