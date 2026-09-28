@@ -1,6 +1,7 @@
 import { MOCK_ACCOUNTS, MOCK_LOGIN, MOCK_USER_INFO, MOCK_USER_ACTIVITY} from '../mocks/data'
 import { getUserId } from './session'
 import { httpError } from './httpErrors'
+import { todayISO } from '../utils/date'
 
 function getConnectedUserId() {
   const userId = getUserId()
@@ -44,7 +45,12 @@ export async function getUserActivity(startWeek, endWeek) {
     throw httpError(400, 'startWeek and endWeek are required')
   }
 
+  const today = todayISO()
+
   return MOCK_USER_ACTIVITY[userId].filter(
-    (session) => session.date >= startWeek && session.date <= endWeek
+    (session) => 
+      session.date >= startWeek && 
+      session.date <= endWeek &&
+      session.date <= today
   )
 }
