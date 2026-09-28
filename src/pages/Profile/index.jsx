@@ -3,7 +3,7 @@ import SectionHeader from '../../components/molecules/SectionHeader'
 import StatCard from '../../components/molecules/StatCard'
 import ProfileCard from '../../components/organisms/ProfileCard'
 import ProfileDetails from '../../components/organisms/ProfileDetails'
-import { formatDate, countDays } from '../../utils/date'
+import { formatDate, countDays, todayISO } from '../../utils/date'
 import { formatDuration } from '../../utils/duration'
 import { formatDistance } from '../../utils/distance'
 import { useUser } from '../../contexts/UserContext/useUser'
@@ -18,7 +18,7 @@ function Profile() {
   const [error, setError] = useState(null)
 
   const startDate = profile.createdAt
-  const endDate = "2026-09-09"
+  const endDate = todayISO()
 
   useEffect(() => {
     async function loadActivity() {
