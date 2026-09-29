@@ -1,5 +1,6 @@
 import AuthLayout from '../../components/templates/AuthLayout'
 import ConnectForm from '../../components/organisms/ConnectForm'
+import loginVisual from '../../assets/background-login.jpg'
 import './Connexion.css'
 
 function Connexion() {
@@ -7,9 +8,7 @@ function Connexion() {
     <AuthLayout 
     visual={
       <>
-        <div className='connexion__image-placeholder'>
-          <span>Visuel d'accueil</span>
-        </div>
+        <img className='connexion__image' src={loginVisual} alt="" />
 
         <p className='connexion__caption'>
           Analyser vos performances en un clin d'oeil,
