@@ -5,6 +5,9 @@ import UserBanner from '../../components/organisms/UserBanner'
 import { formatDate } from '../../utils/date'
 import { formatDistance } from '../../utils/distance'
 import { useUser } from '../../contexts/UserContext/useUser'
+import { getUserActivity } from '../../services/dataService'
+import { groupDistanceByWeek } from '../../utils/activity'
+import DistanceChart from '../../components/organisms/DistanceChart'
 import './Dashboard.css'
 
 
@@ -12,6 +15,9 @@ function Dashboard() {
   const { profile, statistics } = useUser()
 
   const memberSince = formatDate(profile.createdAt)
+  getUserActivity('2026-09-07', '2026-10-04').then((sessions) =>
+  console.log(groupDistanceByWeek(sessions, '2026-09-07'))
+)
 
   return (
     <div className="dashboard">
@@ -26,7 +32,7 @@ function Dashboard() {
 
         <div className="dashboard__charts">
           {/* Emplacements des futurs graphiques */}
-          <Card className="dashboard__chart" />
+          <DistanceChart className="dashboard__chart" />
           <Card className="dashboard__chart" />
         </div>
       </section>
