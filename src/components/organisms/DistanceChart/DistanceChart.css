@@ -1,0 +1,55 @@
+.distance-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.distance-chart .recharts-bar-rectangle .recharts-rectangle {
+  transition: fill 0.2s ease;
+}
+
+.distance-chart:hover .recharts-bar-rectangle .recharts-rectangle {
+  fill: var(--color-primary);
+}
+
+.distance-chart__title {
+  color: var(--color-primary);
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.distance-chart__subtitle {
+  margin-top: 0.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.distance-chart__header {
+  padding-top: 25px;
+  padding-left: 45px;
+}
+
+.legend-item-0 {
+  padding-left: 45px;
+}
+
+.recharts-responsive-container {
+  padding-right: 45px;
+}
+
+.distance-chart__tooltip {
+  padding: 1rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-text);
+  box-shadow: var(--shadow-raised);
+}
+
+.distance-chart__tooltip-dates {
+  color: var(--color-surface);
+  font-size: 0.75rem;
+}
+
+.distance-chart__tooltip-value {
+  color: var(--color-surface);
+  font-weight: 500;
+}
