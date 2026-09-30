@@ -2,6 +2,8 @@ import { addDays, getWeekStart } from './date'
 
 const DAY_LABELS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']
 
+export const WEEKLY_GOAL = 6
+
 export function groupDistanceByWeek(sessions, start) {
     return [0, 1, 2, 3].map((index) => {
         const weekStart = addDays(start, index * 7)
@@ -51,4 +53,17 @@ export function groupHeartRateByDay(sessions, weekStart) {
             average: averageHeartRate(daySessions)
         }
     })
+}
+
+export function summarizeWeek(sessions, goal) {
+    const done = sessions.length
+    const duration = sessions.reduce((sum, session) => sum + session.duration, 0)
+    const distance = sessions.reduce((sum, session) => sum + session.distance, 0)
+
+    return {
+        done,
+        remaining: Math.max(goal - done, 0),
+        duration,
+        distance: Math.round(distance * 10) / 10
+    }
 }

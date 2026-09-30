@@ -10,24 +10,9 @@
 }
 
 .dashboard__week {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 1.75rem;
-  align-items: start;
   margin-top: 1.5rem;
 }
 
-.dashboard__week-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Emplacements réservés : hauteurs des cartes sur la maquette */
 .dashboard__chart {
   min-height: 480px;
-}
-
-.dashboard__chart--goal {
-  min-height: 340px;
 }
