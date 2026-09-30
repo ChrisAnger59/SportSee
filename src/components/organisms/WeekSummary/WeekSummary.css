@@ -1,0 +1,42 @@
+.week-summary {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.week-summary__goal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 340px;
+}
+
+.week-summary__count {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+.week-summary__goal-text {
+  color: var(--color-primary-soft);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.week-summary__subtitle {
+  margin-top: 0.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.week-summary__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.week-summary__header {
+  padding-top: 15px;
+  padding-left: 45px;
+}

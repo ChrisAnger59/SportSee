@@ -25,6 +25,14 @@ export function formatShortDate(value) {
   })
 }
 
+export function formatNumericDate(value) {
+  return (parseISODate(value).toLocaleDateString('fr-FR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  }))
+}
+
 export function countDays(startISO, endISO) {
   return Math.round((parseISODate(endISO) - parseISODate(startISO)) / 86400000) + 1
 }
