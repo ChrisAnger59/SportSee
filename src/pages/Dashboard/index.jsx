@@ -5,9 +5,8 @@ import UserBanner from '../../components/organisms/UserBanner'
 import { formatDate } from '../../utils/date'
 import { formatDistance } from '../../utils/distance'
 import { useUser } from '../../contexts/UserContext/useUser'
-import { getUserActivity } from '../../services/dataService'
-import { groupDistanceByWeek } from '../../utils/activity'
 import DistanceChart from '../../components/organisms/DistanceChart'
+import HeartRateChart from '../../components/organisms/HeartRateChart'
 import './Dashboard.css'
 
 
@@ -15,9 +14,6 @@ function Dashboard() {
   const { profile, statistics } = useUser()
 
   const memberSince = formatDate(profile.createdAt)
-  getUserActivity('2026-09-07', '2026-10-04').then((sessions) =>
-  console.log(groupDistanceByWeek(sessions, '2026-09-07'))
-)
 
   return (
     <div className="dashboard">
@@ -25,15 +21,15 @@ function Dashboard() {
         name={`${profile.firstName} ${profile.lastName}`}
         memberSince={memberSince}
         totalDistance={`${formatDistance(statistics.totalDistance)} km`}
+        picture={profile.profilePicture}
       />
 
       <section className="dashboard__section">
         <SectionHeader title="Vos dernières performances" />
 
         <div className="dashboard__charts">
-          {/* Emplacements des futurs graphiques */}
           <DistanceChart className="dashboard__chart" />
-          <Card className="dashboard__chart" />
+          <HeartRateChart className='dashboard__chart' />
         </div>
       </section>
 

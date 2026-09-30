@@ -36,7 +36,7 @@ function ConnectForm() {
 
     try {
       await login(username, password)
-      navigate('/dashboard')
+      navigate('/dashboard', { replace:true })
     } catch (err) {
       setError(getErrorMessage(err))
       setIsLoading(false)
