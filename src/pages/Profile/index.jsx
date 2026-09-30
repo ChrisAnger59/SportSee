@@ -74,6 +74,7 @@ function Profile() {
         <ProfileCard
           name={`${profile.firstName} ${profile.lastName}`}
           memberSince={memberSince}
+          picture={profile.profilePicture}
         />
         <ProfileDetails details={details} />
       </div>
