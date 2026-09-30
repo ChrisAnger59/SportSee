@@ -6,6 +6,7 @@ import { formatDate } from '../../utils/date'
 import { formatDistance } from '../../utils/distance'
 import { useUser } from '../../contexts/UserContext/useUser'
 import DistanceChart from '../../components/organisms/DistanceChart'
+import HeartRateChart from '../../components/organisms/HeartRateChart'
 import './Dashboard.css'
 
 
@@ -27,9 +28,8 @@ function Dashboard() {
         <SectionHeader title="Vos dernières performances" />
 
         <div className="dashboard__charts">
-          {/* Emplacements des futurs graphiques */}
           <DistanceChart className="dashboard__chart" />
-          <Card className="dashboard__chart" />
+          <HeartRateChart className='dashboard__chart' />
         </div>
       </section>
 

@@ -91,7 +91,7 @@ function DistanceChart({ className= '' }) {
 
           <Tooltip content={<DistanceTooltip />} />
 
-          <Legend verticalAlign="bottom" align="left" iconType="circle" />
+          <Legend position="bottom" iconType="circle" />
 
           <Bar 
             dataKey="distance"
