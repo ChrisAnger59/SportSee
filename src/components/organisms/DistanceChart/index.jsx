@@ -3,6 +3,7 @@ import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAx
 import { getUserActivity } from '../../../services/dataService'
 import { addDays, getWeekStart, todayISO, formatShortDate } from '../../../utils/date'
 import { averageWeeklyDistance, groupDistanceByWeek } from '../../../utils/activity'
+import Button from  '../../atoms/Button'
 import Card from '../../atoms/Card'
 import ErrorMessage from '../../atoms/ErrorMessage'
 import './DistanceChart.css'
@@ -28,28 +29,55 @@ function DistanceTooltip({ active, payload }) {
 }
 
 function DistanceChart({ className= '' }) {
+
+  const currentWeekStart = getWeekStart(todayISO())
+  const latestStart = addDays(currentWeekStart, -21)
+
+  const [start, setStart] = useState(latestStart)
   const [sessions, setSessions] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  const currentMonday = getWeekStart(todayISO())
-  const start = addDays(currentMonday, -21)
-  const end = addDays(currentMonday, 6)
+  const isLatestPeriod = start === latestStart
+  const end = addDays(start, 27)
 
   useEffect(() => {
+
+    let ignore = false
+
     async function loadActivity() {
+      setIsLoading(true)
+      setError(null)
       try {
         const data = await getUserActivity(start, end)
-        setSessions(data)
+        if (!ignore) {
+          setSessions(data)
+        }
       } catch (err) {
-        setError(err)
+        if (!ignore) {
+          setError(err)
+        }
       } finally {
-        setIsLoading(false)
+        if (!ignore) {
+          setIsLoading(false)
+        }
       }
     }
 
     loadActivity()
+
+    return () => {
+      ignore = true
+    }
   }, [start, end])
+
+  const handlePrevious = () => {
+    setStart(addDays(start, -28))
+  }
+
+  const handleNext = () => {
+    setStart(addDays(start, 28))
+  }
 
   const cardClassName = `distance-chart ${className}`.trim()
 
@@ -71,8 +99,24 @@ function DistanceChart({ className= '' }) {
   return (
     <Card className={cardClassName}>
       <div className="distance-chart__header">
-        <h3 className="distance-chart__title">{average}km en moyenne</h3>
-        <p className="distance-chart__subtitle">Total des kilomètres des 4 dernieres semaines</p>
+        <div>
+          <h3 className="distance-chart__title">{average}km en moyenne</h3>
+          <p className="distance-chart__subtitle">Total des kilomètres des 4 dernieres semaines</p>
+        </div>
+
+        <div className='distance-chart__nav'>
+          <Button variant='icon' onClick={handlePrevious} aria-label="Période précédente">
+            ‹
+          </Button>
+
+          <span className='distance-chart__range'>
+            {formatShortDate(start)} - {formatShortDate(end)}
+          </span>
+
+          <Button variant='icon' onClick={handleNext} disabled={isLatestPeriod} aria-label="Période suivante">
+            ›
+          </Button>
+        </div>
       </div>
 
       <ResponsiveContainer width="100%" height={300}>

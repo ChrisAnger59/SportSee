@@ -22,18 +22,33 @@
   margin-top: 0.25rem;
   color: var(--color-text-muted);
   font-size: 0.75rem;
+  position: absolute;
 }
 
 .distance-chart__header {
+  display: flex;
+  justify-content: space-between;
   padding-top: 25px;
   padding-left: 45px;
 }
 
-.legend-item-0 {
+.distance-chart__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 2rem;
+}
+
+.distance-chart__range {
+  color: var(--color-text);
+  font-size: 0.85rem;
+}
+
+.distance-chart .legend-item-0 {
   padding-left: 45px;
 }
 
-.recharts-responsive-container {
+.distance-chart .recharts-responsive-container {
   padding-right: 45px;
 }
 

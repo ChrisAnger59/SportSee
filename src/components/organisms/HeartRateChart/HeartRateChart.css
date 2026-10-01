@@ -17,10 +17,39 @@
 }
 
 .heart-rate-chart__header {
-  padding-top: 25px;
-  padding-left: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+.heat-rate-chart__header div {
+  width: max-content;
 }
 
 .heart-rate-chart .recharts-responsive-container {
   padding-left: 45px;
+}
+
+.heart-rate-chart__nav {
+  padding: 0.5rem;
+}
+
+.heart-rate-chart__nav button {
+  padding: 0 0.5rem;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.heart-rate-chart__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.heart-rate-chart__range {
+  font-size: 0.85rem;
+  color: var(--color-text);
 }

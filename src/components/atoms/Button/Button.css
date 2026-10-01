@@ -56,3 +56,22 @@
 .button--text:hover:not(:disabled) {
   text-decoration: underline;
 }
+
+.button--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-text);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.button--icon:hover:not(:disabled) {
+  background-color: var(--color-primary-soft);
+}

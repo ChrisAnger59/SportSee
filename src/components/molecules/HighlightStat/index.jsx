@@ -1,4 +1,4 @@
-import acheivement from '../../../assets/acheivement.png' 
+import achievement from '../../../assets/achievement.png' 
 import './HighlightStat.css'
 
 function HighlightStat({ label, value, className=''}) {
@@ -6,7 +6,7 @@ function HighlightStat({ label, value, className=''}) {
         <div className={`highlight-stat ${className}`.trim() }>
             <p className='highlight-stat__label'>{label}</p>
             <p className='highlight-stat__value'>
-                <img className='highlight-stat__icon' src={acheivement} />
+                <img className='highlight-stat__icon' src={achievement} />
                 {value}
             </p>
         </div>
