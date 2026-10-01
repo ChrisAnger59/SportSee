@@ -43,8 +43,6 @@ function Profile() {
     return (<ErrorMessage>Impossible de charger votre activité</ErrorMessage>)
   }
 
-  console.log(error)
-
   const totalCalories = sessions.reduce((sum, session) => sum + session.caloriesBurned, 0)
 
   const allDates = sessions.map((session) => session.date)
