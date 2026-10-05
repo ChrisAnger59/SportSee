@@ -8,7 +8,7 @@ function ProfileDetails({ title="Votre profil", details, className=''}) {
             
             <dl className='profile-details__list'>
                 {details.map((detail) =>
-                    <div key={details.label} className='profile-details__item'>
+                    <div key={detail.label} className='profile-details__item'>
                         <dt className='profile-details__term'>{detail.label} :</dt>
                         <dd className='profile-details__value'>{detail.value}</dd>
                     </div>

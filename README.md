@@ -107,8 +107,8 @@ cp .env.example .env.local
 Puis choisir la source dans `.env.local` :
 
 ```
-USE_MOCK=true    # données mockées, aucun backend nécessaire
-USE_MOCK=false   # API réelle (backend requis)
+VITE_USE_MOCK=true    # données mockées, aucun backend nécessaire
+VITE_USE_MOCK=false   # API réelle (backend requis)
 ```
 
 > **Redémarrer `npm run dev` après chaque modification du fichier `.env`** :

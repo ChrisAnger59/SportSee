@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react'
-import { getUserInfo } from '../../services/dataService'
-import ErrorMessage from '../../components/atoms/ErrorMessage'
+import { Navigate } from 'react-router-dom'
+import { getUserInfo, logout } from '../../services/dataService'
 import { UserContext } from './UserContext'
+import ErrorPage from '../../pages/Error'
+
+function isAuthError(error) {
+    return error.status === 401 || error.status === 403
+}
 
 function UserProvider({ children }) {
     const [user, setUser] = useState(null)
@@ -16,6 +21,9 @@ function UserProvider({ children }) {
                 const data = await getUserInfo()
                 setUser(data)
             } catch (err) {
+                if (isAuthError(err)) {
+                    logout()
+                }
                 setError(err)
             } finally {
                 setIsLoading(false)
@@ -30,7 +38,10 @@ function UserProvider({ children }) {
     }
 
     if (error) {
-        return <ErrorMessage>Impossible de charger vos données</ErrorMessage>
+        if(isAuthError(error)) {
+            return <Navigate to="/" replace />
+        }
+        return <ErrorPage type="server" />
     }
 
     return (
