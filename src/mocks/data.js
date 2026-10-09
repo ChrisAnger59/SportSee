@@ -257,6 +257,61 @@ export const MOCK_USER_ACTIVITY = {
             "caloriesBurned": 640
         },
         {
+            "date": "2026-10-06",
+            "distance": 6,
+            "duration": 66,
+            "heartRate": {
+                "min": 100,
+                "max": 188,
+                "average": 144
+            },
+            "caloriesBurned": 640
+        },
+        {
+            "date": "2026-10-07",
+            "distance": 4,
+            "duration": 40,
+            "heartRate": {
+                "min": 90,
+                "max": 160,
+                "average": 125
+            },
+            "caloriesBurned": 640
+        },
+        {
+            "date": "2026-10-08",
+            "distance": 12,
+            "duration": 90,
+            "heartRate": {
+                "min": 127,
+                "max": 199,
+                "average": 165
+            },
+            "caloriesBurned": 640
+        },
+        {
+            "date": "2026-10-09",
+            "distance": 15,
+            "duration": 136,
+            "heartRate": {
+                "min": 130,
+                "max": 188,
+                "average": 159
+            },
+            "caloriesBurned": 640
+        },
+        {
+            "date": "2026-10-10",
+            "distance": 4,
+            "duration": 35,
+            "heartRate": {
+                "min": 100,
+                "max": 165,
+                "average": 133
+            },
+            "caloriesBurned": 640
+        },
+        {
             "date": "2026-10-12",
             "distance": 5.8,
             "duration": 38,

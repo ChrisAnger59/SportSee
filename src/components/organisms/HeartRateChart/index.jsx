@@ -129,7 +129,7 @@ function HeartRateChart({ className='' }) {
 
                         <Tooltip />
 
-                        <Legend position="bottom" iconType="circle" />
+                        <Legend position="bottom" iconType="circle" iconSize={8} wrapperStyle={{ left: 118, top: 305 }} />
 
                         <Bar
                             dataKey="min"

@@ -1,7 +1,7 @@
 .distance-chart {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 4.5rem;
 }
 
 .distance-chart .recharts-bar-rectangle .recharts-rectangle {

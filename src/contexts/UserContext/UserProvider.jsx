@@ -45,9 +45,9 @@ function UserProvider({ children }) {
     }
 
     return (
-        <UserContext.Provider value={user}>
+        <UserContext value={user}>
             {children}
-        </UserContext.Provider>
+        </UserContext>
     )
 }
 
