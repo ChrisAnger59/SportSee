@@ -40,3 +40,38 @@
   padding-top: 15px;
   padding-left: 45px;
 }
+
+.week-summary__chart {
+  position: relative;
+}
+
+.week-summary__legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.week-summary__legend-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.week-summary__legend-item--0 {
+  bottom: 45px;
+  left: 60px;
+}
+
+.week-summary__legend-item--1 {
+  top: 45px;
+  right: 60px;
+}
+
+.week-summary__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+}

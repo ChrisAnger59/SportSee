@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Legend, Pie, PieChart, ResponsiveContainer } from 'recharts'
+import { Pie, PieChart, ResponsiveContainer } from 'recharts'
 import { getUserActivity } from '../../../services/dataService'
 import { addDays, getWeekStart, todayISO } from '../../../utils/date'
 import { summarizeWeek, WEEKLY_GOAL } from '../../../utils/activity'
@@ -66,21 +66,37 @@ function WeekSummary({ className = '' }) {
                     </p>
                 </div>
 
-                <ResponsiveContainer width="100%" height={220}>
-                    <PieChart>
-                        <Pie 
-                            data={goalData}
-                            dataKey="value"
-                            nameKey="name"
-                            innerRadius="40%"
-                            outerRadius="85%"
-                            startAngle={90}
-                            endAngle={-270}
-                            stroke="none"
-                        />
-                        <Legend iconType="circle" iconSize={8} position="bottom" />
-                    </PieChart>
-                </ResponsiveContainer>
+                <div className='week-summary__chart'>
+                    <ResponsiveContainer width="100%" height={220}>
+                        <PieChart>
+                            <Pie
+                                data={goalData}
+                                dataKey="value"
+                                nameKey="name"
+                                innerRadius="40%"
+                                outerRadius="85%"
+                                startAngle={240}
+                                endAngle={-120}
+                                stroke="none"
+                            />
+                        </PieChart>
+                    </ResponsiveContainer>
+
+                    <ul className='week-summary__legend'>
+                        {goalData.map((item, index) => (
+                            <li
+                                key={item.name}
+                                className={`week-summary__legend-item week-summary__legend-item--${index}`}
+                            >
+                                <span
+                                    className='week-summary__legend-dot'
+                                    style={{ backgroundColor: item.fill }}
+                                />
+                                {item.name}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </Card>
             <div className="week-summary__stats">
                 <StatCard label="Durée d'activité" value={duration} unit="minutes" tone="primary" />
