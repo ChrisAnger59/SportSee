@@ -78,7 +78,7 @@ function WeekSummary({ className = '' }) {
                             endAngle={-270}
                             stroke="none"
                         />
-                        <Legend iconType="circle" position="bottom" />
+                        <Legend iconType="circle" iconSize={8} position="bottom" />
                     </PieChart>
                 </ResponsiveContainer>
             </Card>

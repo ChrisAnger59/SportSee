@@ -6,7 +6,7 @@ function HighlightStat({ label, value, className=''}) {
         <div className={`highlight-stat ${className}`.trim() }>
             <p className='highlight-stat__label'>{label}</p>
             <p className='highlight-stat__value'>
-                <img className='highlight-stat__icon' src={achievement} />
+                <img className='highlight-stat__icon' alt='logo achievement' src={achievement} />
                 {value}
             </p>
         </div>
