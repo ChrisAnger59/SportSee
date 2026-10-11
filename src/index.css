@@ -64,6 +64,12 @@ a {
   --color-border: #e4e5f2;
   --color-placeholder: #dcdef0;
 
+  /* Dégradé du logo */
+  --logo-blue-top: #f4320b;
+  --logo-blue-bottom: #5465f7;
+  --logo-red-top: #f99885;
+  --logo-red-bottom: #df392b;
+
   /* Typographie */
   --font-main: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
 

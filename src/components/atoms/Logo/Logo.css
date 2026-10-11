@@ -4,34 +4,29 @@
   gap: 0.5rem;
 }
 
-/* Symbole provisoire : quatre barres rouges de hauteurs alternées. */
 .logo__mark {
-  display: flex;
-  align-items: flex-end;
-  gap: 2px;
+  width: auto;
   height: 22px;
 }
 
-.logo__bar {
-  width: 4px;
-  border-radius: 2px;
-  background-color: var(--color-accent);
+.logo--mark .logo__mark {
+  height: 18px;
 }
 
-.logo__bar:nth-child(1) {
-  height: 60%;
+.logo__stop--blue-top {
+  stop-color: var(--logo-blue-top);
 }
 
-.logo__bar:nth-child(2) {
-  height: 100%;
+.logo__stop--blue-bottom {
+  stop-color: var(--logo-blue-bottom);
 }
 
-.logo__bar:nth-child(3) {
-  height: 45%;
+.logo__stop--red-top {
+  stop-color: var(--logo-red-top);
 }
 
-.logo__bar:nth-child(4) {
-  height: 80%;
+.logo__stop--red-bottom {
+  stop-color: var(--logo-red-bottom);
 }
 
 .logo__wordmark {
@@ -41,6 +36,58 @@
   color: var(--color-primary);
 }
 
-.logo--mark .logo__mark {
-  height: 18px;
+/* État de base = logo complet (les barres rouges à leur place). Chaque cycle
+   de 2 s les fait descendre sur le bleu, puis remonter pour le révéler. */
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: ease-in;
+  }
+
+  15%,
+  44% {
+    transform: translateY(var(--shift));
+    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  71%,
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.logo__bar--red {
+  animation: rise 3.4s infinite;
+  animation-delay: var(--delay);
+}
+
+.logo__bar--red:nth-child(1) {
+  --shift: 5px;
+  --delay: 0s;
+}
+
+.logo__bar--red:nth-child(2) {
+  --shift: 7px;
+  --delay: 0.06s;
+}
+
+.logo__bar--red:nth-child(3) {
+  --shift: 3px;
+  --delay: 0.12s;
+}
+
+.logo__bar--red:nth-child(4) {
+  --shift: 6px;
+  --delay: 0.18s;
+}
+
+.logo__bar--red:nth-child(5) {
+  --shift: 4px;
+  --delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo__bar--red {
+    animation: none;
+  }
 }
