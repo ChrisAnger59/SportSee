@@ -23,7 +23,7 @@
   margin-top: 1.5rem;
 }
 
-.heat-rate-chart__header div {
+.heart-rate-chart__header div {
   width: max-content;
 }
 
@@ -55,7 +55,20 @@
   color: var(--color-text);
 }
 
-.recharts-legend-wrapper {
+.heart-rate-chart .recharts-line-curve {
+  transition: stroke 0.2s ease;
+}
+
+.heart-rate-chart:hover .recharts-line-curve {
+  stroke: var(--color-line-hover);
+}
+
+.heart-rate-chart__legend-text {
+  color: var(--color-legend-text);
+  font-size: 0.75rem;
+}
+
+.heart-rate-chart .recharts-legend-wrapper .recharts-legend-wrapper {
   font-size: 0.75rem;
   left: 118px;
 }

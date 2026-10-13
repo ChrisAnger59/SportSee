@@ -129,7 +129,13 @@ function HeartRateChart({ className='' }) {
 
                         <Tooltip />
 
-                        <Legend position="bottom" iconType="circle" iconSize={8} wrapperStyle={{ left: 118, top: 305 }} />
+                        <Legend 
+                        position="bottom" 
+                        iconType="circle" 
+                        iconSize={8} 
+                        wrapperStyle={{ left: 118, top: 305 }}
+                        formatter={(value) => <span className='heart-rate-chart__legend-text'>{value}</span>}
+                        />
 
                         <Bar
                             dataKey="min"
@@ -151,7 +157,7 @@ function HeartRateChart({ className='' }) {
                             dataKey="average"
                             name="Moy BPM"
                             type="monotone"
-                            stroke="var(--color-primary-soft)"
+                            stroke="var(--color-chart-line)"
                             strokeWidth={2}
                             dot={{ r: 3, fill: 'var(--color-primary)', stroke: 'var(--color-primary)' }}
                             connectNulls

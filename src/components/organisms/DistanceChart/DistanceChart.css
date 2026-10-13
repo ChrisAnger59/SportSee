@@ -68,3 +68,8 @@
   color: var(--color-surface);
   font-weight: 500;
 }
+
+.distance-chart__legend-text {
+  color: var(--color-legend-text);
+  font-size: 0.75rem;
+}

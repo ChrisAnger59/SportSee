@@ -63,6 +63,9 @@ a {
   --color-text-muted: #6e7180;
   --color-border: #e4e5f2;
   --color-placeholder: #dcdef0;
+  --color-chart-line: #F2F3FF;
+  --color-line-hover: #0B23F4;
+  --color-legend-text: #707070;
 
   /* Dégradé du logo */
   --logo-blue-top: #f4320b;

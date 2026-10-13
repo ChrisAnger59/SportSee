@@ -135,7 +135,13 @@ function DistanceChart({ className= '' }) {
 
           <Tooltip content={<DistanceTooltip />} />
 
-          <Legend position="bottom" iconType="circle" iconSize={8} wrapperStyle={{ left: 45, top: 295 }} />
+          <Legend 
+          position="bottom" 
+          iconType="circle" 
+          iconSize={8} 
+          wrapperStyle={{ left: 45, top: 295 }}
+          formatter={(value) => <span className='distance-chart__legend-text'>{value}</span>}
+          />
 
           <Bar 
             dataKey="distance"
