@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Logo from '../../atoms/Logo'
 import './Footer.css'
 
@@ -8,13 +9,13 @@ function Footer() {
                 <p>Sportsee tous droits réservés</p>
 
                 <div className='footer__links'>
-                    <a className='footer__link' href="#conditions">
+                    <Link className='footer__link' to='/conditions'>
                         Conditions générales
-                    </a>
+                    </Link>
 
-                    <a className='footer__link' href="#contact">
+                    <Link className='footer__link' to='/contact'>
                         Contact
-                    </a>
+                    </Link>
 
                     <Logo variant="mark" />
                 </div>

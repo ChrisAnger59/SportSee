@@ -51,5 +51,5 @@
 }
 
 .stat-card--primary .stat-card__unit {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-card-primary);
 }

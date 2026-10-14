@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Bar, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, CartesianGrid, ComposedChart, Legend, Line, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import { getUserActivity } from '../../../services/dataService'
 import { addDays, formatShortDate, getWeekStart, todayISO } from '../../../utils/date'
 import { averageHeartRate, groupHeartRateByDay } from '../../../utils/activity'
@@ -80,7 +80,7 @@ function HeartRateChart({ className='' }) {
     return (
         <Card className={cardClassName}>
             <div className='heart-rate-chart__header'>
-                <div>
+                <div className='heart-rate-chart__heading'>
                     <h3 className='heart-rate-chart__title'>
                         {average === null ? '-' : `${average} BPM`}
                     </h3>

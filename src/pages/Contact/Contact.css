@@ -1,0 +1,33 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact__card {
+  max-width: 800px;
+  padding: 2rem 2.5rem;
+}
+
+.contact__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.75rem;
+  margin: 0;
+}
+
+.contact__label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.contact__value {
+  margin: 0.25rem 0 0;
+  font-weight: 500;
+}
+
+.contact__link {
+  font-size: 1rem;
+  color: var(--color-primary);
+}

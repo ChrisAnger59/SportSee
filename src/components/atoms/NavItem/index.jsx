@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './Navitem.css'
+import './NavItem.css'
 
 function NavItem({ className='', children, ...rest}) {
     return (

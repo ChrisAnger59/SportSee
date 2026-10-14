@@ -1,0 +1,25 @@
+.conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.conditions__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 800px;
+  padding: 2rem 2.5rem;
+}
+
+.conditions__title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.conditions__text {
+  margin-top: 0.5rem;
+  line-height: 1.7;
+}

@@ -66,6 +66,7 @@ a {
   --color-chart-line: #F2F3FF;
   --color-line-hover: #0B23F4;
   --color-legend-text: #707070;
+  --color-card-primary: rgba(255, 255, 255, 0.75);
 
   /* Dégradé du logo */
   --logo-blue-top: #f4320b;
