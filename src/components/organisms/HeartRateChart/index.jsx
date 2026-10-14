@@ -127,7 +127,7 @@ function HeartRateChart({ className='' }) {
                             tick={{ fill: 'var(--color-text-muted)', fontSize: 12 }}
                         />
 
-                        <Tooltip />
+                        
 
                         <Legend 
                         position="bottom" 
